@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My gallery</title>
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="./my-gallery-style.css" />
+    <script type="text/javascript" src="gallery.js" defer></script>
+    <script type="text/javascript" src="images.json"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <img
+        id="logo"
+        data-order="first"
+        src="/photos-and-images/Yo.jpg"
+        alt="Webpage's logo"
+      />
+      <h1>My one and only blog</h1>
+      <h3>by Alessandra Sánchez</h3>
+    </header>
+    <nav>
+      <a class="nav-item" href="/navigering/about-me.html">
+        About me and this blog
+      </a>
+      <a class="nav-item" href="/index.html"> Go back to main page </a>
+      <a class="nav-item" href="/navigering/Contact-info.html">
+        Get in touch with us
+      </a>
+    </nav>
+    <div class="info-box">
+      <h2>My gallery</h2>
+      <p>Here is my gallery of photos!</p>
+      <p>
+        In this gallery you can see pictures that I have been taking every time
+        I travel. (I love to travel)
+      </p>
+      <p>
+        The purpouse with this gallery is to share nice and unforgettable
+        moments with my readers.
+      </p>
+    </div>
+    <div id="pictures">
+      <h2>Pictures of Sintra, Portugal (2021)</h2>
+      <div class="country">
+        <!-- Images are put in by javascript -->
+      </div>
+      <h2>Pictures of London, United Kingdom (2020)</h2>
+      <div class="country"></div>
+      <h2>Pictures of Kampala, Uganda (2019)</h2>
+      <div class="country">
+        <div class="title-image">
+          <img
+            src="/photos-and-images/uganda-trip-1.jpg"
+            alt="first picture of Kampala"
+          />
+          <p>First picture of Kampala</p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p><i>By Alessandra Sánchez for Medieinstitutet.</i></p>
+    </footer>
+  </body>
+</html>

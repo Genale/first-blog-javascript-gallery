@@ -55,18 +55,30 @@
       <h2>Pictures of London, United Kingdom (2020)</h2>
       <div class="country"></div>
       <h2>Pictures of Kampala, Uganda (2019)</h2>
-      <div class="country">
-        <div class="title-image">
-          <img
-            src="/photos-and-images/uganda-trip-1.jpg"
-            alt="first picture of Kampala"
-          />
-          <p>First picture of Kampala</p>
-        </div>
-      </div>
+      <div class="country"></div>
     </div>
     <footer>
       <p><i>By Alessandra Sánchez for Medieinstitutet.</i></p>
     </footer>
+    <div
+      id="dialog"
+      role="dialog"
+      aria-labelledby="dialog-title"
+      aria-describedby="dialog-description"
+      tabindex="-1"
+      hidden
+    >
+      <form class="dialog-content">
+        <img
+          id="dialogImage"
+          src="/photos-and-images/uganda-trip-2.jpg"
+          alt=""
+        />
+        <footer>
+          <p id="imageDescription"></p>
+          <button id="close-button">close</button>
+        </footer>
+      </form>
+    </div>
   </body>
 </html>

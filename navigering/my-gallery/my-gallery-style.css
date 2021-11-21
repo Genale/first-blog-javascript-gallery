@@ -41,3 +41,84 @@ body {
   padding-bottom: 2vw;
   margin-bottom: 8vh;
 }
+
+/* DIALOG CSS */
+
+/* VISIBLE */
+#dialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: 999;
+}
+
+#dialog p {
+  color: black;
+}
+
+#dialog:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 999;
+
+  /* fade in */
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* show the dialog in the center of the screen */
+#dialog .dialog-content {
+  box-sizing: border-box;
+  /* maintain on screen even during scroll (potentially problematic on mobile) */
+  position: fixed;
+  /* when centering, try using FlexBox instead of this junk */
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+
+  /* dialogs are usually boxy things that are on top of everything */
+  padding: 20px;
+  border: 1px solid #ccc;
+  background: white;
+  z-index: 1000;
+
+  /* zoom in from the center */
+  transition: transform 0.2s ease-in-out;
+}
+
+#dialog h1 {
+  margin: 0;
+}
+#dialog footer {
+  margin-top: 20px;
+}
+
+#dialog img {
+  max-height: 75vh;
+}
+
+/* HIDDEN */
+#dialog[hidden],
+#dialog[hidden]:before,
+#dialog[hidden] .dialog-content {
+  display: block;
+  visibility: hidden;
+  transform: translate3d(0px, -1px, 0px) scale(0);
+  transition: visibility 0s linear 0.2s, transform 0s linear 0.2s;
+}
+#dialog[hidden]:before {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out, visibility 0s linear 0.2s,
+    transform 0s linear 0.2s;
+}
+#dialog[hidden] .dialog-content {
+  transform: translate3d(0px, -1px, 0px) scale(0);
+  transition: transform 0.2s ease-in-out, visibility 0s linear 0.2s;
+}

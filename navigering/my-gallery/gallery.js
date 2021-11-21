@@ -1,12 +1,15 @@
+for (i = 0; i < 10; i++) {
+  console.log(i);
+}
+
 let images;
 
 $.getJSON("images.json", function (json) {
   images = json;
-  console.log(json);
-  addImagesToGallery();
+  addImagesToGalleryAndCreatePopups();
 });
 
-function addImagesToGallery() {
+function addImagesToGalleryAndCreatePopups() {
   let sintraImages = [images[0], images[1], images[2]];
   let londonImages = [images[3], images[4], images[5]];
   let ugandaImages = [images[6], images[7], images[8]];
@@ -69,4 +72,28 @@ function addImagesToGallery() {
 
     ugandaImagesElement.appendChild(titleImageContainer);
   }
+
+  let titleImages = document.querySelectorAll(".title-image");
+  for (i = 0; i < titleImages.length; i++) {
+    let image = images[i];
+    let titleImageElement = titleImages[i];
+
+    titleImageElement.addEventListener("click", () => showImagePopup(image));
+  }
+
+  let dialogEl = document.querySelector("#dialog");
+  let closeButton = document.querySelector("#close-button");
+  closeButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    dialogEl.hidden = true;
+  });
+}
+
+function showImagePopup(image) {
+  let dialogEl = document.querySelector("#dialog");
+  let dialogImage = dialogEl.querySelector("#dialogImage");
+  dialogImage.src = image.url;
+  dialogEl.hidden = false;
+  let imageDescription = dialogEl.querySelector("#imageDescription");
+  imageDescription.innerHTML = image.description;
 }

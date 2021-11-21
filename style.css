@@ -176,7 +176,8 @@ img {
   width: 100%;
   height: auto;
 }
-footer {
+
+body > footer {
   display: flex;
   justify-content: center;
   background-color: rgb(130, 78, 0);
@@ -184,7 +185,7 @@ footer {
   height: fit-content;
 }
 
-footer > p {
+body > footer > p {
   font-size: small;
   padding: 10px;
   background: none;

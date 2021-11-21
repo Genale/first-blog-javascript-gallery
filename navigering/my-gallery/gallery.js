@@ -1,7 +1,3 @@
-for (i = 0; i < 10; i++) {
-  console.log(i);
-}
-
 let images;
 
 $.getJSON("images.json", function (json) {
